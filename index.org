@@ -19,17 +19,35 @@ First we'll load the Data Frame Input/Output package.
 #+RESULTS:
 : T
 
-## #+BEGIN_SRC lisp :exports both :session *lisp* :results yes
-## (require 'data-frame)     
-## (use-package 'data-frame) 
-## #+end_src
-## 
+#+BEGIN_SRC lisp :exports both :session *lisp* :results yes
+(require 'data-frame)     
+(use-package 'data-frame) 
+#+end_src
+
+#+RESULTS:
+: T
 
 #+BEGIN_SRC lisp :exports both :session *lisp* :results yes
-(defparameter *df*
+(require 'lisp-stat)     
+(use-package 'lisp-stat) 
+#+end_src
+
+#+RESULTS:
+: T
+
+#+BEGIN_SRC lisp :exports both :session *lisp* :results value
+(in-package :ls-user)
+#+end_src
+
+#+RESULTS:
+: #<PACKAGE "LS-USER">
+
+
+#+BEGIN_SRC lisp :exports both :session *lisp* :results yes
+(defparameter energy_prices
 	(read-csv #P"ng_cl_data.csv"))
 
-*df*
+energy_prices
 #+end_src
 
 #+RESULTS:
@@ -37,7 +55,7 @@ First we'll load the Data Frame Input/Output package.
 
 
 #+BEGIN_SRC lisp :exports both :session *lisp* :results output
-(head *df*)
+(head energy_prices)
 #+end_src
 
 #+RESULTS:
@@ -52,7 +70,7 @@ First we'll load the Data Frame Input/Output package.
 
 
 #+BEGIN_SRC lisp :exports both :session *lisp* :results output
-(tail *df*)
+(tail energy_prices)
 #+end_src
 
 #+RESULTS:
@@ -67,10 +85,27 @@ First we'll load the Data Frame Input/Output package.
 
 
 #+BEGIN_SRC lisp :exports both :session *lisp* :results value
-(column-names *df*)
+(column-names energy_prices)
 #+end_src
 
 #+RESULTS:
 | INDEX | NG-RNGC1-W | PET-RCLC1-W |
 
+#+BEGIN_SRC lisp :exports both :session *lisp* :results value
+(rename-column! energy_prices 'ng 'NG-RNGC1-W)
+#+end_src
+
+
+
+#+BEGIN_SRC lisp :exports both :session *lisp* :results value
+(aops:dims energy_prices)
+#+end_src
+
+#+RESULTS:
+| 1531 | 3 |
+
+
+#+BEGIN_SRC lisp :exports both :session *lisp* :results value :eval no
+(mean energy_prices:NG-RNGC1-W)
+#+end_src
 
