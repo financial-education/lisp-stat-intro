@@ -1,0 +1,76 @@
+#+title: Lisp-Stat
+#+author: Matt Brigida, Ph.D.
+#+email: matthew.brigida@sunypoly.edu
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
+
+# #+PROPERTY: header-args :eval no
+
+* Intro
+
+
+First we'll load the Data Frame Input/Output package.  
+
+#+BEGIN_SRC lisp :exports both :session *lisp* :results yes
+(require 'dfio)     
+(use-package 'dfio) 
+#+end_src
+
+#+RESULTS:
+: T
+
+## #+BEGIN_SRC lisp :exports both :session *lisp* :results yes
+## (require 'data-frame)     
+## (use-package 'data-frame) 
+## #+end_src
+## 
+
+#+BEGIN_SRC lisp :exports both :session *lisp* :results yes
+(defparameter *df*
+	(read-csv #P"ng_cl_data.csv"))
+
+*df*
+#+end_src
+
+#+RESULTS:
+: #<DATA-FRAME (1531 observations of 3 variables)>
+
+
+#+BEGIN_SRC lisp :exports both :session *lisp* :results output
+(head *df*)
+#+end_src
+
+#+RESULTS:
+: 
+: ;;   INDEX      NG-RNGC1-W PET-RCLC1-W
+: ;; 0 1994-01-14      2.231       14.63
+: ;; 1 1994-01-21      2.297       15.05
+: ;; 2 1994-01-28      2.404       15.31
+: ;; 3 1994-02-04      2.506       15.73
+: ;; 4 1994-02-11      2.369       14.87
+: ;; 5 1994-02-18      2.330       14.11
+
+
+#+BEGIN_SRC lisp :exports both :session *lisp* :results output
+(tail *df*)
+#+end_src
+
+#+RESULTS:
+: 
+: ;;   INDEX      NG-RNGC1-W PET-RCLC1-W
+: ;; 0 2023-04-07      2.092       80.61
+: ;; 1 2023-04-14      2.114       81.84
+: ;; 2 2023-04-21      2.269       79.20
+: ;; 3 2023-04-28      2.292       76.33
+: ;; 4 2023-05-05      2.188       71.16
+: ;; 5 2023-05-12      2.230       72.07
+
+
+#+BEGIN_SRC lisp :exports both :session *lisp* :results value
+(column-names *df*)
+#+end_src
+
+#+RESULTS:
+| INDEX | NG-RNGC1-W | PET-RCLC1-W |
+
+

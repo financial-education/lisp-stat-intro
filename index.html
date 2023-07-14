@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-14 Fri 13:38 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lisp-Stat</title>
+<meta name="author" content="Matt Brigida, Ph.D." />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<style>pre.src{background:#343131;color:white;} </style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Lisp-Stat</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org805b942">1. Intro</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org805b942" class="outline-2">
+<h2 id="org805b942"><span class="section-number-2">1.</span> Intro</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+First we'll load the Data Frame Input/Output package.  
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #859900; font-weight: bold;">require</span> '<span style="color: #268bd2; font-weight: bold;">dfio</span>)     
+(use-package 'dfio) 
+</pre>
+</div>
+
+<pre class="example">
+T
+</pre>
+
+
+<p>
+## #+BEGIN<sub>SRC</sub> lisp :exports both :session <b>lisp</b> :results yes
+## (require 'data-frame)     
+## (use-package 'data-frame) 
+## #+end<sub>src</sub>
+## 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #859900; font-weight: bold;">defparameter</span> <span style="color: #268bd2;">*df*</span>
+        (read-csv #P<span style="color: #2aa198;">"ng_cl_data.csv"</span>))
+
+*df*
+</pre>
+</div>
+
+<pre class="example">
+#&lt;DATA-FRAME (1531 observations of 3 variables)&gt;
+</pre>
+
+
+
+<div class="org-src-container">
+<pre class="src src-lisp">(head *df*)
+</pre>
+</div>
+
+<pre class="example">
+
+;;   INDEX      NG-RNGC1-W PET-RCLC1-W
+;; 0 1994-01-14      2.231       14.63
+;; 1 1994-01-21      2.297       15.05
+;; 2 1994-01-28      2.404       15.31
+;; 3 1994-02-04      2.506       15.73
+;; 4 1994-02-11      2.369       14.87
+;; 5 1994-02-18      2.330       14.11
+</pre>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Matt Brigida, Ph.D.</p>
+<p class="date">Created: 2023-07-14 Fri 13:38</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
