@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 15:34 -->
+<!-- 2023-07-14 Fri 16:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lisp-Stat</title>
@@ -24,13 +24,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org990ff13">1. Intro</a></li>
+<li><a href="#org636f476">1. Intro</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org990ff13" class="outline-2">
-<h2 id="org990ff13"><span class="section-number-2">1.</span> Intro</h2>
+<div id="outline-container-org636f476" class="outline-2">
+<h2 id="org636f476"><span class="section-number-2">1.</span> Intro</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 First we'll load the Data Frame Input/Output package.  
@@ -93,6 +93,9 @@ energy_prices
 </pre>
 
 
+<p>
+Here is a reference for data frames: <a href="https://lisp-stat.github.io/data-frame/">https://lisp-stat.github.io/data-frame/</a>
+</p>
 
 <div class="org-src-container">
 <pre class="src src-lisp">(head energy_prices)
@@ -164,6 +167,39 @@ energy_prices
 </pre>
 
 
+<div class="org-src-container">
+<pre class="src src-lisp">(rename-column! energy_prices 'cl 'PET-RCLC1-W)
+</pre>
+</div>
+
+<pre class="example">
+#&lt;DATA-FRAME (1531 observations of 3 variables)&gt;
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-lisp">(column-names energy_prices)
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">INDEX</td>
+<td class="org-left">NG</td>
+<td class="org-left">CL</td>
+</tr>
+</tbody>
+</table>
 
 
 <div class="org-src-container">
@@ -188,16 +224,4632 @@ energy_prices
 </table>
 
 
+<p>
+To select a column we can use:
+</p>
+
 <div class="org-src-container">
-<pre class="src src-lisp">(mean energy_prices:NG-RNGC1-W)
+<pre class="src src-lisp">(column energy_prices 'NG)
 </pre>
 </div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">2.231d0</td>
+<td class="org-right">2.297d0</td>
+<td class="org-right">2.404d0</td>
+<td class="org-right">2.506d0</td>
+<td class="org-right">2.369d0</td>
+<td class="org-right">2.33d0</td>
+<td class="org-right">2.267d0</td>
+<td class="org-right">2.178d0</td>
+<td class="org-right">2.146d0</td>
+<td class="org-right">2.108d0</td>
+<td class="org-right">2.058d0</td>
+<td class="org-right">2.065d0</td>
+<td class="org-right">2.092d0</td>
+<td class="org-right">2.127d0</td>
+<td class="org-right">2.126d0</td>
+<td class="org-right">2.097d0</td>
+<td class="org-right">2.025d0</td>
+<td class="org-right">1.959d0</td>
+<td class="org-right">1.933d0</td>
+<td class="org-right">1.855d0</td>
+<td class="org-right">1.938d0</td>
+<td class="org-right">2.052d0</td>
+<td class="org-right">2.128d0</td>
+<td class="org-right">2.065d0</td>
+<td class="org-right">2.183d0</td>
+<td class="org-right">2.087d0</td>
+<td class="org-right">1.991d0</td>
+<td class="org-right">1.886d0</td>
+<td class="org-right">1.862d0</td>
+<td class="org-right">1.783d0</td>
+<td class="org-right">1.709d0</td>
+<td class="org-right">1.757d0</td>
+<td class="org-right">1.573d0</td>
+<td class="org-right">1.6d0</td>
+<td class="org-right">1.631d0</td>
+<td class="org-right">1.661d0</td>
+<td class="org-right">1.506d0</td>
+<td class="org-right">1.699d0</td>
+<td class="org-right">1.662d0</td>
+<td class="org-right">1.641d0</td>
+<td class="org-right">1.605d0</td>
+<td class="org-right">1.932d0</td>
+<td class="org-right">1.894d0</td>
+<td class="org-right">1.754d0</td>
+<td class="org-right">1.68d0</td>
+<td class="org-right">1.803d0</td>
+<td class="org-right">1.724d0</td>
+<td class="org-right">1.778d0</td>
+<td class="org-right">1.759d0</td>
+<td class="org-right">1.59d0</td>
+<td class="org-right">1.697d0</td>
+<td class="org-right">1.587d0</td>
+<td class="org-right">1.399d0</td>
+<td class="org-right">1.388d0</td>
+<td class="org-right">1.387d0</td>
+<td class="org-right">1.407d0</td>
+<td class="org-right">1.471d0</td>
+<td class="org-right">1.397d0</td>
+<td class="org-right">1.446d0</td>
+<td class="org-right">1.465d0</td>
+<td class="org-right">1.443d0</td>
+<td class="org-right">1.523d0</td>
+<td class="org-right">1.543d0</td>
+<td class="org-right">1.664d0</td>
+<td class="org-right">1.657d0</td>
+<td class="org-right">1.615d0</td>
+<td class="org-right">1.683d0</td>
+<td class="org-right">1.676d0</td>
+<td class="org-right">1.666d0</td>
+<td class="org-right">1.666d0</td>
+<td class="org-right">1.725d0</td>
+<td class="org-right">1.768d0</td>
+<td class="org-right">1.714d0</td>
+<td class="org-right">1.702d0</td>
+<td class="org-right">1.683d0</td>
+<td class="org-right">1.577d0</td>
+<td class="org-right">1.542d0</td>
+<td class="org-right">1.481d0</td>
+<td class="org-right">1.525d0</td>
+<td class="org-right">1.483d0</td>
+<td class="org-right">1.46d0</td>
+<td class="org-right">1.476d0</td>
+<td class="org-right">1.499d0</td>
+<td class="org-right">1.548d0</td>
+<td class="org-right">1.604d0</td>
+<td class="org-right">1.707d0</td>
+<td class="org-right">1.653d0</td>
+<td class="org-right">1.667d0</td>
+<td class="org-right">1.609d0</td>
+<td class="org-right">1.75d0</td>
+<td class="org-right">1.825d0</td>
+<td class="org-right">1.778d0</td>
+<td class="org-right">1.726d0</td>
+<td class="org-right">1.802d0</td>
+<td class="org-right">1.848d0</td>
+<td class="org-right">1.858d0</td>
+<td class="org-right">1.946d0</td>
+<td class="org-right">2.17d0</td>
+<td class="org-right">2.046d0</td>
+<td class="org-right">2.195d0</td>
+<td class="org-right">2.286d0</td>
+<td class="org-right">2.851d0</td>
+<td class="org-right">2.616d0</td>
+<td class="org-right">2.931d0</td>
+<td class="org-right">2.636d0</td>
+<td class="org-right">2.171d0</td>
+<td class="org-right">2.305d0</td>
+<td class="org-right">2.493d0</td>
+<td class="org-right">2.43d0</td>
+<td class="org-right">2.543d0</td>
+<td class="org-right">2.534d0</td>
+<td class="org-right">2.272d0</td>
+<td class="org-right">2.165d0</td>
+<td class="org-right">2.233d0</td>
+<td class="org-right">2.642d0</td>
+<td class="org-right">2.412d0</td>
+<td class="org-right">2.305d0</td>
+<td class="org-right">2.364d0</td>
+<td class="org-right">2.338d0</td>
+<td class="org-right">2.263d0</td>
+<td class="org-right">2.199d0</td>
+<td class="org-right">2.187d0</td>
+<td class="org-right">2.288d0</td>
+<td class="org-right">2.329d0</td>
+<td class="org-right">2.415d0</td>
+<td class="org-right">2.381d0</td>
+<td class="org-right">2.45d0</td>
+<td class="org-right">2.606d0</td>
+<td class="org-right">2.739d0</td>
+<td class="org-right">2.803d0</td>
+<td class="org-right">2.76d0</td>
+<td class="org-right">2.59d0</td>
+<td class="org-right">2.288d0</td>
+<td class="org-right">2.188d0</td>
+<td class="org-right">2.12d0</td>
+<td class="org-right">2.079d0</td>
+<td class="org-right">2.028d0</td>
+<td class="org-right">1.873d0</td>
+<td class="org-right">1.814d0</td>
+<td class="org-right">1.834d0</td>
+<td class="org-right">1.98d0</td>
+<td class="org-right">2.023d0</td>
+<td class="org-right">2.264d0</td>
+<td class="org-right">2.399d0</td>
+<td class="org-right">2.405d0</td>
+<td class="org-right">2.563d0</td>
+<td class="org-right">2.756d0</td>
+<td class="org-right">2.648d0</td>
+<td class="org-right">2.743d0</td>
+<td class="org-right">3.449d0</td>
+<td class="org-right">3.524d0</td>
+<td class="org-right">3.477d0</td>
+<td class="org-right">3.498d0</td>
+<td class="org-right">4.338d0</td>
+<td class="org-right">3.639d0</td>
+<td class="org-right">2.857d0</td>
+<td class="org-right">3.456d0</td>
+<td class="org-right">3.371d0</td>
+<td class="org-right">2.902d0</td>
+<td class="org-right">2.568d0</td>
+<td class="org-right">2.356d0</td>
+<td class="org-right">2.089d0</td>
+<td class="org-right">1.959d0</td>
+<td class="org-right">1.835d0</td>
+<td class="org-right">1.883d0</td>
+<td class="org-right">1.942d0</td>
+<td class="org-right">1.886d0</td>
+<td class="org-right">1.875d0</td>
+<td class="org-right">1.904d0</td>
+<td class="org-right">1.919d0</td>
+<td class="org-right">2.009d0</td>
+<td class="org-right">2.097d0</td>
+<td class="org-right">2.183d0</td>
+<td class="org-right">2.279d0</td>
+<td class="org-right">2.226d0</td>
+<td class="org-right">2.218d0</td>
+<td class="org-right">2.299d0</td>
+<td class="org-right">2.147d0</td>
+<td class="org-right">2.112d0</td>
+<td class="org-right">2.186d0</td>
+<td class="org-right">2.205d0</td>
+<td class="org-right">2.104d0</td>
+<td class="org-right">2.098d0</td>
+<td class="org-right">2.166d0</td>
+<td class="org-right">2.134d0</td>
+<td class="org-right">2.168d0</td>
+<td class="org-right">2.409d0</td>
+<td class="org-right">2.478d0</td>
+<td class="org-right">2.444d0</td>
+<td class="org-right">2.577d0</td>
+<td class="org-right">2.743d0</td>
+<td class="org-right">2.73d0</td>
+<td class="org-right">2.783d0</td>
+<td class="org-right">3.14d0</td>
+<td class="org-right">3.091d0</td>
+<td class="org-right">2.955d0</td>
+<td class="org-right">3.122d0</td>
+<td class="org-right">3.461d0</td>
+<td class="org-right">3.509d0</td>
+<td class="org-right">3.382d0</td>
+<td class="org-right">3.337d0</td>
+<td class="org-right">2.85d0</td>
+<td class="org-right">2.605d0</td>
+<td class="org-right">2.6d0</td>
+<td class="org-right">2.4d0</td>
+<td class="org-right">2.407d0</td>
+<td class="org-right">2.27d0</td>
+<td class="org-right">2.24d0</td>
+<td class="org-right">2.125d0</td>
+<td class="org-right">2.06d0</td>
+<td class="org-right">2.119d0</td>
+<td class="org-right">2.093d0</td>
+<td class="org-right">2.335d0</td>
+<td class="org-right">2.244d0</td>
+<td class="org-right">2.204d0</td>
+<td class="org-right">2.257d0</td>
+<td class="org-right">2.206d0</td>
+<td class="org-right">2.149d0</td>
+<td class="org-right">2.238d0</td>
+<td class="org-right">2.336d0</td>
+<td class="org-right">2.51d0</td>
+<td class="org-right">2.637d0</td>
+<td class="org-right">2.491d0</td>
+<td class="org-right">2.419d0</td>
+<td class="org-right">2.261d0</td>
+<td class="org-right">2.186d0</td>
+<td class="org-right">2.21d0</td>
+<td class="org-right">2.122d0</td>
+<td class="org-right">2.088d0</td>
+<td class="org-right">2.1d0</td>
+<td class="org-right">1.969d0</td>
+<td class="org-right">2.138d0</td>
+<td class="org-right">2.362d0</td>
+<td class="org-right">2.436d0</td>
+<td class="org-right">2.35d0</td>
+<td class="org-right">2.208d0</td>
+<td class="org-right">1.991d0</td>
+<td class="org-right">1.921d0</td>
+<td class="org-right">1.86d0</td>
+<td class="org-right">1.844d0</td>
+<td class="org-right">1.968d0</td>
+<td class="org-right">1.77d0</td>
+<td class="org-right">1.737d0</td>
+<td class="org-right">1.885d0</td>
+<td class="org-right">2.141d0</td>
+<td class="org-right">2.172d0</td>
+<td class="org-right">2.254d0</td>
+<td class="org-right">2.315d0</td>
+<td class="org-right">2.083d0</td>
+<td class="org-right">2.173d0</td>
+<td class="org-right">2.2d0</td>
+<td class="org-right">2.464d0</td>
+<td class="org-right">2.441d0</td>
+<td class="org-right">2.232d0</td>
+<td class="org-right">2.147d0</td>
+<td class="org-right">1.951d0</td>
+<td class="org-right">1.911d0</td>
+<td class="org-right">2.006d0</td>
+<td class="org-right">1.914d0</td>
+<td class="org-right">1.846d0</td>
+<td class="org-right">1.928d0</td>
+<td class="org-right">1.795d0</td>
+<td class="org-right">1.828d0</td>
+<td class="org-right">1.775d0</td>
+<td class="org-right">1.791d0</td>
+<td class="org-right">1.815d0</td>
+<td class="org-right">1.765d0</td>
+<td class="org-right">1.673d0</td>
+<td class="org-right">1.747d0</td>
+<td class="org-right">1.861d0</td>
+<td class="org-right">1.713d0</td>
+<td class="org-right">1.794d0</td>
+<td class="org-right">1.923d0</td>
+<td class="org-right">2.046d0</td>
+<td class="org-right">2.124d0</td>
+<td class="org-right">2.187d0</td>
+<td class="org-right">2.314d0</td>
+<td class="org-right">2.319d0</td>
+<td class="org-right">2.259d0</td>
+<td class="org-right">2.26d0</td>
+<td class="org-right">2.248d0</td>
+<td class="org-right">2.396d0</td>
+<td class="org-right">2.405d0</td>
+<td class="org-right">2.331d0</td>
+<td class="org-right">2.258d0</td>
+<td class="org-right">2.321d0</td>
+<td class="org-right">2.164d0</td>
+<td class="org-right">2.166d0</td>
+<td class="org-right">2.316d0</td>
+<td class="org-right">2.565d0</td>
+<td class="org-right">2.632d0</td>
+<td class="org-right">2.728d0</td>
+<td class="org-right">2.807d0</td>
+<td class="org-right">3.002d0</td>
+<td class="org-right">2.712d0</td>
+<td class="org-right">2.735d0</td>
+<td class="org-right">2.639d0</td>
+<td class="org-right">2.539d0</td>
+<td class="org-right">2.71d0</td>
+<td class="org-right">2.629d0</td>
+<td class="org-right">2.906d0</td>
+<td class="org-right">3.008d0</td>
+<td class="org-right">3.009d0</td>
+<td class="org-right">2.866d0</td>
+<td class="org-right">2.627d0</td>
+<td class="org-right">2.472d0</td>
+<td class="org-right">2.168d0</td>
+<td class="org-right">2.368d0</td>
+<td class="org-right">2.302d0</td>
+<td class="org-right">2.574d0</td>
+<td class="org-right">2.498d0</td>
+<td class="org-right">2.334d0</td>
+<td class="org-right">2.178d0</td>
+<td class="org-right">2.258d0</td>
+<td class="org-right">2.461d0</td>
+<td class="org-right">2.561d0</td>
+<td class="org-right">2.704d0</td>
+<td class="org-right">2.551d0</td>
+<td class="org-right">2.604d0</td>
+<td class="org-right">2.549d0</td>
+<td class="org-right">2.774d0</td>
+<td class="org-right">2.783d0</td>
+<td class="org-right">2.834d0</td>
+<td class="org-right">2.788d0</td>
+<td class="org-right">2.919d0</td>
+<td class="org-right">2.905d0</td>
+<td class="org-right">3.021d0</td>
+<td class="org-right">3.096d0</td>
+<td class="org-right">3.106d0</td>
+<td class="org-right">3.138d0</td>
+<td class="org-right">3.275d0</td>
+<td class="org-right">3.613d0</td>
+<td class="org-right">4.055d0</td>
+<td class="org-right">4.204d0</td>
+<td class="org-right">4.186d0</td>
+<td class="org-right">4.315d0</td>
+<td class="org-right">4.309d0</td>
+<td class="org-right">4.502d0</td>
+<td class="org-right">4.145d0</td>
+<td class="org-right">4.166d0</td>
+<td class="org-right">3.924d0</td>
+<td class="org-right">3.76d0</td>
+<td class="org-right">4.104d0</td>
+<td class="org-right">4.423d0</td>
+<td class="org-right">4.361d0</td>
+<td class="org-right">4.608d0</td>
+<td class="org-right">4.7d0</td>
+<td class="org-right">4.974d0</td>
+<td class="org-right">5.095d0</td>
+<td class="org-right">5.278d0</td>
+<td class="org-right">5.244d0</td>
+<td class="org-right">5.23d0</td>
+<td class="org-right">5.391d0</td>
+<td class="org-right">5.183d0</td>
+<td class="org-right">4.751d0</td>
+<td class="org-right">4.67d0</td>
+<td class="org-right">5.233d0</td>
+<td class="org-right">5.975d0</td>
+<td class="org-right">6.411d0</td>
+<td class="org-right">6.234d0</td>
+<td class="org-right">8.051d0</td>
+<td class="org-right">8.18d0</td>
+<td class="org-right">9.272d0</td>
+<td class="org-right">9.705d0</td>
+<td class="org-right">8.695d0</td>
+<td class="org-right">9.163d0</td>
+<td class="org-right">7.401d0</td>
+<td class="org-right">7.208d0</td>
+<td class="org-right">6.226d0</td>
+<td class="org-right">6.014d0</td>
+<td class="org-right">5.704d0</td>
+<td class="org-right">5.174d0</td>
+<td class="org-right">5.156d0</td>
+<td class="org-right">5.271d0</td>
+<td class="org-right">5.007d0</td>
+<td class="org-right">5.175d0</td>
+<td class="org-right">5.325d0</td>
+<td class="org-right">5.242d0</td>
+<td class="org-right">5.45d0</td>
+<td class="org-right">5.228d0</td>
+<td class="org-right">4.988d0</td>
+<td class="org-right">4.567d0</td>
+<td class="org-right">4.269d0</td>
+<td class="org-right">4.376d0</td>
+<td class="org-right">4.075d0</td>
+<td class="org-right">3.842d0</td>
+<td class="org-right">3.907d0</td>
+<td class="org-right">4.121d0</td>
+<td class="org-right">3.828d0</td>
+<td class="org-right">3.28d0</td>
+<td class="org-right">3.168d0</td>
+<td class="org-right">3.291d0</td>
+<td class="org-right">3.042d0</td>
+<td class="org-right">3.103d0</td>
+<td class="org-right">3.23d0</td>
+<td class="org-right">3.006d0</td>
+<td class="org-right">3.246d0</td>
+<td class="org-right">2.943d0</td>
+<td class="org-right">2.405d0</td>
+<td class="org-right">2.429d0</td>
+<td class="org-right">2.392d0</td>
+<td class="org-right">2.187d0</td>
+<td class="org-right">2.032d0</td>
+<td class="org-right">2.287d0</td>
+<td class="org-right">2.419d0</td>
+<td class="org-right">2.511d0</td>
+<td class="org-right">2.889d0</td>
+<td class="org-right">3.225d0</td>
+<td class="org-right">2.911d0</td>
+<td class="org-right">2.678d0</td>
+<td class="org-right">2.818d0</td>
+<td class="org-right">2.576d0</td>
+<td class="org-right">2.564d0</td>
+<td class="org-right">2.774d0</td>
+<td class="org-right">2.708d0</td>
+<td class="org-right">2.746d0</td>
+<td class="org-right">2.394d0</td>
+<td class="org-right">2.234d0</td>
+<td class="org-right">2.285d0</td>
+<td class="org-right">2.066d0</td>
+<td class="org-right">2.027d0</td>
+<td class="org-right">2.126d0</td>
+<td class="org-right">2.245d0</td>
+<td class="org-right">2.414d0</td>
+<td class="org-right">2.373d0</td>
+<td class="org-right">2.615d0</td>
+<td class="org-right">2.981d0</td>
+<td class="org-right">3.285d0</td>
+<td class="org-right">3.375d0</td>
+<td class="org-right">3.459d0</td>
+<td class="org-right">3.188d0</td>
+<td class="org-right">3.442d0</td>
+<td class="org-right">3.444d0</td>
+<td class="org-right">3.704d0</td>
+<td class="org-right">3.696d0</td>
+<td class="org-right">3.697d0</td>
+<td class="org-right">3.425d0</td>
+<td class="org-right">3.284d0</td>
+<td class="org-right">3.243d0</td>
+<td class="org-right">3.175d0</td>
+<td class="org-right">3.291d0</td>
+<td class="org-right">3.327d0</td>
+<td class="org-right">3.159d0</td>
+<td class="org-right">2.882d0</td>
+<td class="org-right">2.872d0</td>
+<td class="org-right">2.943d0</td>
+<td class="org-right">2.904d0</td>
+<td class="org-right">2.712d0</td>
+<td class="org-right">3.025d0</td>
+<td class="org-right">3.341d0</td>
+<td class="org-right">3.386d0</td>
+<td class="org-right">3.233d0</td>
+<td class="org-right">3.36d0</td>
+<td class="org-right">3.717d0</td>
+<td class="org-right">3.788d0</td>
+<td class="org-right">3.965d0</td>
+<td class="org-right">3.898d0</td>
+<td class="org-right">4.263d0</td>
+<td class="org-right">4.137d0</td>
+<td class="org-right">4.181d0</td>
+<td class="org-right">3.866d0</td>
+<td class="org-right">3.875d0</td>
+<td class="org-right">4.277d0</td>
+<td class="org-right">4.2d0</td>
+<td class="org-right">4.326d0</td>
+<td class="org-right">4.815d0</td>
+<td class="org-right">5.217d0</td>
+<td class="org-right">5.053d0</td>
+<td class="org-right">5.046d0</td>
+<td class="org-right">5.134d0</td>
+<td class="org-right">5.393d0</td>
+<td class="org-right">5.522d0</td>
+<td class="org-right">5.537d0</td>
+<td class="org-right">5.808d0</td>
+<td class="org-right">5.841d0</td>
+<td class="org-right">6.203d0</td>
+<td class="org-right">8.686d0</td>
+<td class="org-right">7.012d0</td>
+<td class="org-right">5.822d0</td>
+<td class="org-right">5.311d0</td>
+<td class="org-right">5.143d0</td>
+<td class="org-right">5.022d0</td>
+<td class="org-right">5.253d0</td>
+<td class="org-right">5.647d0</td>
+<td class="org-right">5.575d0</td>
+<td class="org-right">5.253d0</td>
+<td class="org-right">5.699d0</td>
+<td class="org-right">6.171d0</td>
+<td class="org-right">6.084d0</td>
+<td class="org-right">6.04d0</td>
+<td class="org-right">6.435d0</td>
+<td class="org-right">6.027d0</td>
+<td class="org-right">5.749d0</td>
+<td class="org-right">5.594d0</td>
+<td class="org-right">5.288d0</td>
+<td class="org-right">5.363d0</td>
+<td class="org-right">5.025d0</td>
+<td class="org-right">4.857d0</td>
+<td class="org-right">4.73d0</td>
+<td class="org-right">4.834d0</td>
+<td class="org-right">5.052d0</td>
+<td class="org-right">5.104d0</td>
+<td class="org-right">4.944d0</td>
+<td class="org-right">4.728d0</td>
+<td class="org-right">4.772d0</td>
+<td class="org-right">4.588d0</td>
+<td class="org-right">4.513d0</td>
+<td class="org-right">4.771d0</td>
+<td class="org-right">5.267d0</td>
+<td class="org-right">5.38d0</td>
+<td class="org-right">4.854d0</td>
+<td class="org-right">4.612d0</td>
+<td class="org-right">4.738d0</td>
+<td class="org-right">4.845d0</td>
+<td class="org-right">4.838d0</td>
+<td class="org-right">4.968d0</td>
+<td class="org-right">5.818d0</td>
+<td class="org-right">6.834d0</td>
+<td class="org-right">6.959d0</td>
+<td class="org-right">6.286d0</td>
+<td class="org-right">6.313d0</td>
+<td class="org-right">7.033d0</td>
+<td class="org-right">6.281d0</td>
+<td class="org-right">6.083d0</td>
+<td class="org-right">5.654d0</td>
+<td class="org-right">5.526d0</td>
+<td class="org-right">5.4d0</td>
+<td class="org-right">5.275d0</td>
+<td class="org-right">5.232d0</td>
+<td class="org-right">5.478d0</td>
+<td class="org-right">5.493d0</td>
+<td class="org-right">5.668d0</td>
+<td class="org-right">5.447d0</td>
+<td class="org-right">5.724d0</td>
+<td class="org-right">5.856d0</td>
+<td class="org-right">5.777d0</td>
+<td class="org-right">5.567d0</td>
+<td class="org-right">5.871d0</td>
+<td class="org-right">6.264d0</td>
+<td class="org-right">6.371d0</td>
+<td class="org-right">6.342d0</td>
+<td class="org-right">6.616d0</td>
+<td class="org-right">6.456d0</td>
+<td class="org-right">6.145d0</td>
+<td class="org-right">6.427d0</td>
+<td class="org-right">6.411d0</td>
+<td class="org-right">6.155d0</td>
+<td class="org-right">6.28d0</td>
+<td class="org-right">5.894d0</td>
+<td class="org-right">5.994d0</td>
+<td class="org-right">6.083d0</td>
+<td class="org-right">5.718d0</td>
+<td class="org-right">5.614d0</td>
+<td class="org-right">5.438d0</td>
+<td class="org-right">5.243d0</td>
+<td class="org-right">4.943d0</td>
+<td class="org-right">4.662d0</td>
+<td class="org-right">4.885d0</td>
+<td class="org-right">5.488d0</td>
+<td class="org-right">6.292d0</td>
+<td class="org-right">7.07d0</td>
+<td class="org-right">6.798d0</td>
+<td class="org-right">7.47d0</td>
+<td class="org-right">8.265d0</td>
+<td class="org-right">8.438d0</td>
+<td class="org-right">7.432d0</td>
+<td class="org-right">7.166d0</td>
+<td class="org-right">7.177d0</td>
+<td class="org-right">7.295d0</td>
+<td class="org-right">6.791d0</td>
+<td class="org-right">7.238d0</td>
+<td class="org-right">6.824d0</td>
+<td class="org-right">6.231d0</td>
+<td class="org-right">5.915d0</td>
+<td class="org-right">6.207d0</td>
+<td class="org-right">6.244d0</td>
+<td class="org-right">6.362d0</td>
+<td class="org-right">6.251d0</td>
+<td class="org-right">6.11d0</td>
+<td class="org-right">6.041d0</td>
+<td class="org-right">6.358d0</td>
+<td class="org-right">6.705d0</td>
+<td class="org-right">6.796d0</td>
+<td class="org-right">7.204d0</td>
+<td class="org-right">7.191d0</td>
+<td class="org-right">7.436d0</td>
+<td class="org-right">7.466d0</td>
+<td class="org-right">7.089d0</td>
+<td class="org-right">7.055d0</td>
+<td class="org-right">6.87d0</td>
+<td class="org-right">6.63d0</td>
+<td class="org-right">6.619d0</td>
+<td class="org-right">6.402d0</td>
+<td class="org-right">6.312d0</td>
+<td class="org-right">6.716d0</td>
+<td class="org-right">7.045d0</td>
+<td class="org-right">7.446d0</td>
+<td class="org-right">7.483d0</td>
+<td class="org-right">7.07d0</td>
+<td class="org-right">7.508d0</td>
+<td class="org-right">7.794d0</td>
+<td class="org-right">7.494d0</td>
+<td class="org-right">7.587d0</td>
+<td class="org-right">8.41d0</td>
+<td class="org-right">9.058d0</td>
+<td class="org-right">9.344d0</td>
+<td class="org-right">9.758d0</td>
+<td class="org-right">11.485d0</td>
+<td class="org-right">11.367d0</td>
+<td class="org-right">11.088d0</td>
+<td class="org-right">12.572d0</td>
+<td class="org-right">13.424d0</td>
+<td class="org-right">13.805d0</td>
+<td class="org-right">13.268d0</td>
+<td class="org-right">13.341d0</td>
+<td class="org-right">13.653d0</td>
+<td class="org-right">11.754d0</td>
+<td class="org-right">11.685d0</td>
+<td class="org-right">11.771d0</td>
+<td class="org-right">11.521d0</td>
+<td class="org-right">12.492d0</td>
+<td class="org-right">14.031d0</td>
+<td class="org-right">14.462d0</td>
+<td class="org-right">13.52d0</td>
+<td class="org-right">11.225d0</td>
+<td class="org-right">9.988d0</td>
+<td class="org-right">9.134d0</td>
+<td class="org-right">9.011d0</td>
+<td class="org-right">8.469d0</td>
+<td class="org-right">8.877d0</td>
+<td class="org-right">7.676d0</td>
+<td class="org-right">7.147d0</td>
+<td class="org-right">7.396d0</td>
+<td class="org-right">6.757d0</td>
+<td class="org-right">6.624d0</td>
+<td class="org-right">7.127d0</td>
+<td class="org-right">7.054d0</td>
+<td class="org-right">7.242d0</td>
+<td class="org-right">7.018d0</td>
+<td class="org-right">6.933d0</td>
+<td class="org-right">7.964d0</td>
+<td class="org-right">7.074d0</td>
+<td class="org-right">6.745d0</td>
+<td class="org-right">6.621d0</td>
+<td class="org-right">6.092d0</td>
+<td class="org-right">6.079d0</td>
+<td class="org-right">6.394d0</td>
+<td class="org-right">6.237d0</td>
+<td class="org-right">6.673d0</td>
+<td class="org-right">6.529d0</td>
+<td class="org-right">6.04d0</td>
+<td class="org-right">5.65d0</td>
+<td class="org-right">5.899d0</td>
+<td class="org-right">5.886d0</td>
+<td class="org-right">6.825d0</td>
+<td class="org-right">7.624d0</td>
+<td class="org-right">7.302d0</td>
+<td class="org-right">6.792d0</td>
+<td class="org-right">6.948d0</td>
+<td class="org-right">6.3d0</td>
+<td class="org-right">5.856d0</td>
+<td class="org-right">5.313d0</td>
+<td class="org-right">4.857d0</td>
+<td class="org-right">4.842d0</td>
+<td class="org-right">6.024d0</td>
+<td class="org-right">6.097d0</td>
+<td class="org-right">6.813d0</td>
+<td class="org-right">7.263d0</td>
+<td class="org-right">7.672d0</td>
+<td class="org-right">7.763d0</td>
+<td class="org-right">7.985d0</td>
+<td class="org-right">7.908d0</td>
+<td class="org-right">8.49d0</td>
+<td class="org-right">7.69d0</td>
+<td class="org-right">7.498d0</td>
+<td class="org-right">6.872d0</td>
+<td class="org-right">6.124d0</td>
+<td class="org-right">6.202d0</td>
+<td class="org-right">6.531d0</td>
+<td class="org-right">6.52d0</td>
+<td class="org-right">7.283d0</td>
+<td class="org-right">7.466d0</td>
+<td class="org-right">7.731d0</td>
+<td class="org-right">7.325d0</td>
+<td class="org-right">7.678d0</td>
+<td class="org-right">7.382d0</td>
+<td class="org-right">7.282d0</td>
+<td class="org-right">6.954d0</td>
+<td class="org-right">7.101d0</td>
+<td class="org-right">7.53d0</td>
+<td class="org-right">7.554d0</td>
+<td class="org-right">7.799d0</td>
+<td class="org-right">7.463d0</td>
+<td class="org-right">7.637d0</td>
+<td class="org-right">7.839d0</td>
+<td class="org-right">7.752d0</td>
+<td class="org-right">7.945d0</td>
+<td class="org-right">7.758d0</td>
+<td class="org-right">7.836d0</td>
+<td class="org-right">7.964d0</td>
+<td class="org-right">7.724d0</td>
+<td class="org-right">7.415d0</td>
+<td class="org-right">6.834d0</td>
+<td class="org-right">6.645d0</td>
+<td class="org-right">6.573d0</td>
+<td class="org-right">6.472d0</td>
+<td class="org-right">5.976d0</td>
+<td class="org-right">6.247d0</td>
+<td class="org-right">6.407d0</td>
+<td class="org-right">6.896d0</td>
+<td class="org-right">5.716d0</td>
+<td class="org-right">5.501d0</td>
+<td class="org-right">5.646d0</td>
+<td class="org-right">6.114d0</td>
+<td class="org-right">6.297d0</td>
+<td class="org-right">6.588d0</td>
+<td class="org-right">7.247d0</td>
+<td class="org-right">6.913d0</td>
+<td class="org-right">7.337d0</td>
+<td class="org-right">7.006d0</td>
+<td class="org-right">8.135d0</td>
+<td class="org-right">7.819d0</td>
+<td class="org-right">7.889d0</td>
+<td class="org-right">7.628d0</td>
+<td class="org-right">7.447d0</td>
+<td class="org-right">7.207d0</td>
+<td class="org-right">7.148d0</td>
+<td class="org-right">7.136d0</td>
+<td class="org-right">7.157d0</td>
+<td class="org-right">7.712d0</td>
+<td class="org-right">8.082d0</td>
+<td class="org-right">8.151d0</td>
+<td class="org-right">7.769d0</td>
+<td class="org-right">7.99d0</td>
+<td class="org-right">8.041d0</td>
+<td class="org-right">8.557d0</td>
+<td class="org-right">8.994d0</td>
+<td class="org-right">9.226d0</td>
+<td class="org-right">9.59d0</td>
+<td class="org-right">10.026d0</td>
+<td class="org-right">9.15d0</td>
+<td class="org-right">9.539d0</td>
+<td class="org-right">9.679d0</td>
+<td class="org-right">9.908d0</td>
+<td class="org-right">10.332d0</td>
+<td class="org-right">10.774d0</td>
+<td class="org-right">10.86d0</td>
+<td class="org-right">11.291d0</td>
+<td class="org-right">11.362d0</td>
+<td class="org-right">11.502d0</td>
+<td class="org-right">11.723d0</td>
+<td class="org-right">12.356d0</td>
+<td class="org-right">12.624d0</td>
+<td class="org-right">12.99d0</td>
+<td class="org-right">13.054d0</td>
+<td class="org-right">13.456d0</td>
+<td class="org-right">12.311d0</td>
+<td class="org-right">11.188d0</td>
+<td class="org-right">9.754d0</td>
+<td class="org-right">9.227d0</td>
+<td class="org-right">8.608d0</td>
+<td class="org-right">8.272d0</td>
+<td class="org-right">8.007d0</td>
+<td class="org-right">8.098d0</td>
+<td class="org-right">7.324d0</td>
+<td class="org-right">7.416d0</td>
+<td class="org-right">7.543d0</td>
+<td class="org-right">7.692d0</td>
+<td class="org-right">7.445d0</td>
+<td class="org-right">6.741d0</td>
+<td class="org-right">6.699d0</td>
+<td class="org-right">6.604d0</td>
+<td class="org-right">6.398d0</td>
+<td class="org-right">7.01d0</td>
+<td class="org-right">6.6d0</td>
+<td class="org-right">6.518d0</td>
+<td class="org-right">6.667d0</td>
+<td class="org-right">6.226d0</td>
+<td class="org-right">5.586d0</td>
+<td class="org-right">5.582d0</td>
+<td class="org-right">5.692d0</td>
+<td class="org-right">5.882d0</td>
+<td class="org-right">5.804d0</td>
+<td class="org-right">5.066d0</td>
+<td class="org-right">4.655d0</td>
+<td class="org-right">4.494d0</td>
+<td class="org-right">4.616d0</td>
+<td class="org-right">4.564d0</td>
+<td class="org-right">4.125d0</td>
+<td class="org-right">4.12d0</td>
+<td class="org-right">4.162d0</td>
+<td class="org-right">3.888d0</td>
+<td class="org-right">3.948d0</td>
+<td class="org-right">4.11d0</td>
+<td class="org-right">3.76d0</td>
+<td class="org-right">3.632d0</td>
+<td class="org-right">3.668d0</td>
+<td class="org-right">3.458d0</td>
+<td class="org-right">3.378d0</td>
+<td class="org-right">3.926d0</td>
+<td class="org-right">4.294d0</td>
+<td class="org-right">3.828d0</td>
+<td class="org-right">3.72d0</td>
+<td class="org-right">3.964d0</td>
+<td class="org-right">3.792d0</td>
+<td class="org-right">4.128d0</td>
+<td class="org-right">3.872d0</td>
+<td class="org-right">3.8d0</td>
+<td class="org-right">3.41d0</td>
+<td class="org-right">3.462d0</td>
+<td class="org-right">3.688d0</td>
+<td class="org-right">3.582d0</td>
+<td class="org-right">3.896d0</td>
+<td class="org-right">3.448d0</td>
+<td class="org-right">3.026d0</td>
+<td class="org-right">2.916d0</td>
+<td class="org-right">2.752d0</td>
+<td class="org-right">2.965d0</td>
+<td class="org-right">3.524d0</td>
+<td class="org-right">3.8d0</td>
+<td class="org-right">4.528d0</td>
+<td class="org-right">4.9d0</td>
+<td class="org-right">4.634d0</td>
+<td class="org-right">4.968d0</td>
+<td class="org-right">4.694d0</td>
+<td class="org-right">4.77d0</td>
+<td class="org-right">4.48d0</td>
+<td class="org-right">4.43d0</td>
+<td class="org-right">4.828d0</td>
+<td class="org-right">4.638d0</td>
+<td class="org-right">5.088d0</td>
+<td class="org-right">5.572d0</td>
+<td class="org-right">5.713d0</td>
+<td class="org-right">5.77d0</td>
+<td class="org-right">5.818d0</td>
+<td class="org-right">5.61d0</td>
+<td class="org-right">5.625d0</td>
+<td class="org-right">5.35d0</td>
+<td class="org-right">5.448d0</td>
+<td class="org-right">5.37d0</td>
+<td class="org-right">5.228d0</td>
+<td class="org-right">4.816d0</td>
+<td class="org-right">4.664d0</td>
+<td class="org-right">4.49d0</td>
+<td class="org-right">4.26d0</td>
+<td class="org-right">4.034d0</td>
+<td class="org-right">3.943d0</td>
+<td class="org-right">4.086d0</td>
+<td class="org-right">4.08d0</td>
+<td class="org-right">4.054d0</td>
+<td class="org-right">4.13d0</td>
+<td class="org-right">3.99d0</td>
+<td class="org-right">4.246d0</td>
+<td class="org-right">4.21d0</td>
+<td class="org-right">4.172d0</td>
+<td class="org-right">4.54d0</td>
+<td class="org-right">4.768d0</td>
+<td class="org-right">5.068d0</td>
+<td class="org-right">4.808d0</td>
+<td class="org-right">4.685d0</td>
+<td class="org-right">4.513d0</td>
+<td class="org-right">4.432d0</td>
+<td class="org-right">4.566d0</td>
+<td class="org-right">4.762d0</td>
+<td class="org-right">4.63d0</td>
+<td class="org-right">4.314d0</td>
+<td class="org-right">4.206d0</td>
+<td class="org-right">3.89d0</td>
+<td class="org-right">3.816d0</td>
+<td class="org-right">3.828d0</td>
+<td class="org-right">3.998d0</td>
+<td class="org-right">3.922d0</td>
+<td class="org-right">3.85d0</td>
+<td class="org-right">3.722d0</td>
+<td class="org-right">3.626d0</td>
+<td class="org-right">3.436d0</td>
+<td class="org-right">3.578d0</td>
+<td class="org-right">3.868d0</td>
+<td class="org-right">4.016d0</td>
+<td class="org-right">3.974d0</td>
+<td class="org-right">4.3d0</td>
+<td class="org-right">4.27d0</td>
+<td class="org-right">4.47d0</td>
+<td class="org-right">4.204d0</td>
+<td class="org-right">4.133d0</td>
+<td class="org-right">4.274d0</td>
+<td class="org-right">4.528d0</td>
+<td class="org-right">4.455d0</td>
+<td class="org-right">4.604d0</td>
+<td class="org-right">4.436d0</td>
+<td class="org-right">4.37d0</td>
+<td class="org-right">4.016d0</td>
+<td class="org-right">3.913d0</td>
+<td class="org-right">3.891d0</td>
+<td class="org-right">3.863d0</td>
+<td class="org-right">3.888d0</td>
+<td class="org-right">4.024d0</td>
+<td class="org-right">4.279d0</td>
+<td class="org-right">4.344d0</td>
+<td class="org-right">4.153d0</td>
+<td class="org-right">4.153d0</td>
+<td class="org-right">4.281d0</td>
+<td class="org-right">4.484d0</td>
+<td class="org-right">4.487d0</td>
+<td class="org-right">4.204d0</td>
+<td class="org-right">4.204d0</td>
+<td class="org-right">4.383d0</td>
+<td class="org-right">4.699d0</td>
+<td class="org-right">4.787d0</td>
+<td class="org-right">4.508d0</td>
+<td class="org-right">4.289d0</td>
+<td class="org-right">4.323d0</td>
+<td class="org-right">4.23d0</td>
+<td class="org-right">4.39d0</td>
+<td class="org-right">4.475d0</td>
+<td class="org-right">4.303d0</td>
+<td class="org-right">4.063d0</td>
+<td class="org-right">4.02d0</td>
+<td class="org-right">3.944d0</td>
+<td class="org-right">3.933d0</td>
+<td class="org-right">3.948d0</td>
+<td class="org-right">3.943d0</td>
+<td class="org-right">3.918d0</td>
+<td class="org-right">3.753d0</td>
+<td class="org-right">3.756d0</td>
+<td class="org-right">3.581d0</td>
+<td class="org-right">3.576d0</td>
+<td class="org-right">3.617d0</td>
+<td class="org-right">3.66d0</td>
+<td class="org-right">3.805d0</td>
+<td class="org-right">3.665d0</td>
+<td class="org-right">3.386d0</td>
+<td class="org-right">3.454d0</td>
+<td class="org-right">3.556d0</td>
+<td class="org-right">3.429d0</td>
+<td class="org-right">3.185d0</td>
+<td class="org-right">3.132d0</td>
+<td class="org-right">3.053d0</td>
+<td class="org-right">3.033d0</td>
+<td class="org-right">2.819d0</td>
+<td class="org-right">2.406d0</td>
+<td class="org-right">2.618d0</td>
+<td class="org-right">2.53d0</td>
+<td class="org-right">2.485d0</td>
+<td class="org-right">2.528d0</td>
+<td class="org-right">2.61d0</td>
+<td class="org-right">2.506d0</td>
+<td class="org-right">2.322d0</td>
+<td class="org-right">2.291d0</td>
+<td class="org-right">2.318d0</td>
+<td class="org-right">2.18d0</td>
+<td class="org-right">2.142d0</td>
+<td class="org-right">2.017d0</td>
+<td class="org-right">1.95d0</td>
+<td class="org-right">2.054d0</td>
+<td class="org-right">2.306d0</td>
+<td class="org-right">2.438d0</td>
+<td class="org-right">2.577d0</td>
+<td class="org-right">2.654d0</td>
+<td class="org-right">2.399d0</td>
+<td class="org-right">2.371d0</td>
+<td class="org-right">2.319d0</td>
+<td class="org-right">2.581d0</td>
+<td class="org-right">2.756d0</td>
+<td class="org-right">2.861d0</td>
+<td class="org-right">2.844d0</td>
+<td class="org-right">2.93d0</td>
+<td class="org-right">3.098d0</td>
+<td class="org-right">3.078d0</td>
+<td class="org-right">2.904d0</td>
+<td class="org-right">2.751d0</td>
+<td class="org-right">2.776d0</td>
+<td class="org-right">2.69d0</td>
+<td class="org-right">2.777d0</td>
+<td class="org-right">2.969d0</td>
+<td class="org-right">2.816d0</td>
+<td class="org-right">3.08d0</td>
+<td class="org-right">3.442d0</td>
+<td class="org-right">3.512d0</td>
+<td class="org-right">3.519d0</td>
+<td class="org-right">3.454d0</td>
+<td class="org-right">3.621d0</td>
+<td class="org-right">3.572d0</td>
+<td class="org-right">3.712d0</td>
+<td class="org-right">3.839d0</td>
+<td class="org-right">3.681d0</td>
+<td class="org-right">3.609d0</td>
+<td class="org-right">3.383d0</td>
+<td class="org-right">3.402d0</td>
+<td class="org-right">3.39d0</td>
+<td class="org-right">3.267d0</td>
+<td class="org-right">3.223d0</td>
+<td class="org-right">3.465d0</td>
+<td class="org-right">3.501d0</td>
+<td class="org-right">3.298d0</td>
+<td class="org-right">3.338d0</td>
+<td class="org-right">3.226d0</td>
+<td class="org-right">3.272d0</td>
+<td class="org-right">3.443d0</td>
+<td class="org-right">3.548d0</td>
+<td class="org-right">3.732d0</td>
+<td class="org-right">3.935d0</td>
+<td class="org-right">3.983d0</td>
+<td class="org-right">3.991d0</td>
+<td class="org-right">4.109d0</td>
+<td class="org-right">4.264d0</td>
+<td class="org-right">4.198d0</td>
+<td class="org-right">4.225d0</td>
+<td class="org-right">3.96d0</td>
+<td class="org-right">4.001d0</td>
+<td class="org-right">4.193d0</td>
+<td class="org-right">4.082d0</td>
+<td class="org-right">3.929d0</td>
+<td class="org-right">3.77d0</td>
+<td class="org-right">3.878d0</td>
+<td class="org-right">3.648d0</td>
+<td class="org-right">3.635d0</td>
+<td class="org-right">3.667d0</td>
+<td class="org-right">3.716d0</td>
+<td class="org-right">3.663d0</td>
+<td class="org-right">3.414d0</td>
+<td class="org-right">3.282d0</td>
+<td class="org-right">3.345d0</td>
+<td class="org-right">3.479d0</td>
+<td class="org-right">3.558d0</td>
+<td class="org-right">3.614d0</td>
+<td class="org-right">3.614d0</td>
+<td class="org-right">3.721d0</td>
+<td class="org-right">3.535d0</td>
+<td class="org-right">3.543d0</td>
+<td class="org-right">3.705d0</td>
+<td class="org-right">3.78d0</td>
+<td class="org-right">3.641d0</td>
+<td class="org-right">3.556d0</td>
+<td class="org-right">3.497d0</td>
+<td class="org-right">3.604d0</td>
+<td class="org-right">3.663d0</td>
+<td class="org-right">3.864d0</td>
+<td class="org-right">4.034d0</td>
+<td class="org-right">4.313d0</td>
+<td class="org-right">4.339d0</td>
+<td class="org-right">4.43d0</td>
+<td class="org-right">4.321d0</td>
+<td class="org-right">4.176d0</td>
+<td class="org-right">4.335d0</td>
+<td class="org-right">4.672d0</td>
+<td class="org-right">5.078d0</td>
+<td class="org-right">5.003d0</td>
+<td class="org-right">4.932d0</td>
+<td class="org-right">5.975d0</td>
+<td class="org-right">4.903d0</td>
+<td class="org-right">4.592d0</td>
+<td class="org-right">4.511d0</td>
+<td class="org-right">4.432d0</td>
+<td class="org-right">4.432d0</td>
+<td class="org-right">4.384d0</td>
+<td class="org-right">4.574d0</td>
+<td class="org-right">4.6d0</td>
+<td class="org-right">4.704d0</td>
+<td class="org-right">4.767d0</td>
+<td class="org-right">4.666d0</td>
+<td class="org-right">4.408d0</td>
+<td class="org-right">4.452d0</td>
+<td class="org-right">4.556d0</td>
+<td class="org-right">4.658d0</td>
+<td class="org-right">4.637d0</td>
+<td class="org-right">4.652d0</td>
+<td class="org-right">4.469d0</td>
+<td class="org-right">4.42d0</td>
+<td class="org-right">4.173d0</td>
+<td class="org-right">4.054d0</td>
+<td class="org-right">3.802d0</td>
+<td class="org-right">3.796d0</td>
+<td class="org-right">3.9d0</td>
+<td class="org-right">3.89d0</td>
+<td class="org-right">3.844d0</td>
+<td class="org-right">3.983d0</td>
+<td class="org-right">3.837d0</td>
+<td class="org-right">3.899d0</td>
+<td class="org-right">3.937d0</td>
+<td class="org-right">3.906d0</td>
+<td class="org-right">4.054d0</td>
+<td class="org-right">3.883d0</td>
+<td class="org-right">3.819d0</td>
+<td class="org-right">3.657d0</td>
+<td class="org-right">3.728d0</td>
+<td class="org-right">4.237d0</td>
+<td class="org-right">4.137d0</td>
+<td class="org-right">4.342d0</td>
+<td class="org-right">4.219d0</td>
+<td class="org-right">3.827d0</td>
+<td class="org-right">3.676d0</td>
+<td class="org-right">3.629d0</td>
+<td class="org-right">3.088d0</td>
+<td class="org-right">3.044d0</td>
+<td class="org-right">2.913d0</td>
+<td class="org-right">3.051d0</td>
+<td class="org-right">2.907d0</td>
+<td class="org-right">2.828d0</td>
+<td class="org-right">2.655d0</td>
+<td class="org-right">2.718d0</td>
+<td class="org-right">2.844d0</td>
+<td class="org-right">2.821d0</td>
+<td class="org-right">2.772d0</td>
+<td class="org-right">2.739d0</td>
+<td class="org-right">2.818d0</td>
+<td class="org-right">2.701d0</td>
+<td class="org-right">2.651d0</td>
+<td class="org-right">2.598d0</td>
+<td class="org-right">2.594d0</td>
+<td class="org-right">2.556d0</td>
+<td class="org-right">2.628d0</td>
+<td class="org-right">2.798d0</td>
+<td class="org-right">2.932d0</td>
+<td class="org-right">2.942d0</td>
+<td class="org-right">2.746d0</td>
+<td class="org-right">2.639d0</td>
+<td class="org-right">2.803d0</td>
+<td class="org-right">2.846d0</td>
+<td class="org-right">2.768d0</td>
+<td class="org-right">2.811d0</td>
+<td class="org-right">2.731d0</td>
+<td class="org-right">2.871d0</td>
+<td class="org-right">2.839d0</td>
+<td class="org-right">2.796d0</td>
+<td class="org-right">2.794d0</td>
+<td class="org-right">2.841d0</td>
+<td class="org-right">2.716d0</td>
+<td class="org-right">2.676d0</td>
+<td class="org-right">2.684d0</td>
+<td class="org-right">2.684d0</td>
+<td class="org-right">2.681d0</td>
+<td class="org-right">2.575d0</td>
+<td class="org-right">2.511d0</td>
+<td class="org-right">2.479d0</td>
+<td class="org-right">2.475d0</td>
+<td class="org-right">2.399d0</td>
+<td class="org-right">2.153d0</td>
+<td class="org-right">2.301d0</td>
+<td class="org-right">2.31d0</td>
+<td class="org-right">2.305d0</td>
+<td class="org-right">2.205d0</td>
+<td class="org-right">2.2d0</td>
+<td class="org-right">2.041d0</td>
+<td class="org-right">1.806d0</td>
+<td class="org-right">1.953d0</td>
+<td class="org-right">2.288d0</td>
+<td class="org-right">2.356d0</td>
+<td class="org-right">2.232d0</td>
+<td class="org-right">2.122d0</td>
+<td class="org-right">2.201d0</td>
+<td class="org-right">2.05d0</td>
+<td class="org-right">2.049d0</td>
+<td class="org-right">1.875d0</td>
+<td class="org-right">1.777d0</td>
+<td class="org-right">1.687d0</td>
+<td class="org-right">1.753d0</td>
+<td class="org-right">1.876d0</td>
+<td class="org-right">1.823d0</td>
+<td class="org-right">1.932d0</td>
+<td class="org-right">1.974d0</td>
+<td class="org-right">1.965d0</td>
+<td class="org-right">2.061d0</td>
+<td class="org-right">2.069d0</td>
+<td class="org-right">2.089d0</td>
+<td class="org-right">2.136d0</td>
+<td class="org-right">2.036d0</td>
+<td class="org-right">2.032d0</td>
+<td class="org-right">2.356d0</td>
+<td class="org-right">2.516d0</td>
+<td class="org-right">2.597d0</td>
+<td class="org-right">2.71d0</td>
+<td class="org-right">2.881d0</td>
+<td class="org-right">2.782d0</td>
+<td class="org-right">2.731d0</td>
+<td class="org-right">2.715d0</td>
+<td class="org-right">2.776d0</td>
+<td class="org-right">2.79d0</td>
+<td class="org-right">2.612d0</td>
+<td class="org-right">2.617d0</td>
+<td class="org-right">2.791d0</td>
+<td class="org-right">2.83d0</td>
+<td class="org-right">2.749d0</td>
+<td class="org-right">2.918d0</td>
+<td class="org-right">2.997d0</td>
+<td class="org-right">2.962d0</td>
+<td class="org-right">3.034d0</td>
+<td class="org-right">3.268d0</td>
+<td class="org-right">3.162d0</td>
+<td class="org-right">2.841d0</td>
+<td class="org-right">2.851d0</td>
+<td class="org-right">2.693d0</td>
+<td class="org-right">2.754d0</td>
+<td class="org-right">2.986d0</td>
+<td class="org-right">3.368d0</td>
+<td class="org-right">3.667d0</td>
+<td class="org-right">3.484d0</td>
+<td class="org-right">3.479d0</td>
+<td class="org-right">3.804d0</td>
+<td class="org-right">3.288d0</td>
+<td class="org-right">3.282d0</td>
+<td class="org-right">3.322d0</td>
+<td class="org-right">3.325d0</td>
+<td class="org-right">3.153d0</td>
+<td class="org-right">3.096d0</td>
+<td class="org-right">2.892d0</td>
+<td class="org-right">2.6d0</td>
+<td class="org-right">2.779d0</td>
+<td class="org-right">2.922d0</td>
+<td class="org-right">2.962d0</td>
+<td class="org-right">3.054d0</td>
+<td class="org-right">3.141d0</td>
+<td class="org-right">3.256d0</td>
+<td class="org-right">3.201d0</td>
+<td class="org-right">3.151d0</td>
+<td class="org-right">3.153d0</td>
+<td class="org-right">3.218d0</td>
+<td class="org-right">3.298d0</td>
+<td class="org-right">3.242d0</td>
+<td class="org-right">3.236d0</td>
+<td class="org-right">3.056d0</td>
+<td class="org-right">3.022d0</td>
+<td class="org-right">3.003d0</td>
+<td class="org-right">2.903d0</td>
+<td class="org-right">3.042d0</td>
+<td class="org-right">2.886d0</td>
+<td class="org-right">2.98d0</td>
+<td class="org-right">3.037d0</td>
+<td class="org-right">2.935d0</td>
+<td class="org-right">2.8d0</td>
+<td class="org-right">2.895d0</td>
+<td class="org-right">2.921d0</td>
+<td class="org-right">2.934d0</td>
+<td class="org-right">2.987d0</td>
+<td class="org-right">2.961d0</td>
+<td class="org-right">3.021d0</td>
+<td class="org-right">3.053d0</td>
+<td class="org-right">2.967d0</td>
+<td class="org-right">2.907d0</td>
+<td class="org-right">2.942d0</td>
+<td class="org-right">2.91d0</td>
+<td class="org-right">2.905d0</td>
+<td class="org-right">2.935d0</td>
+<td class="org-right">3.165d0</td>
+<td class="org-right">3.1d0</td>
+<td class="org-right">3.011d0</td>
+<td class="org-right">3.053d0</td>
+<td class="org-right">2.871d0</td>
+<td class="org-right">2.703d0</td>
+<td class="org-right">2.668d0</td>
+<td class="org-right">2.812d0</td>
+<td class="org-right">2.938d0</td>
+<td class="org-right">2.99d0</td>
+<td class="org-right">3.187d0</td>
+<td class="org-right">3.426d0</td>
+<td class="org-right">3.105d0</td>
+<td class="org-right">2.698d0</td>
+<td class="org-right">2.574d0</td>
+<td class="org-right">2.618d0</td>
+<td class="org-right">2.676d0</td>
+<td class="org-right">2.744d0</td>
+<td class="org-right">2.733d0</td>
+<td class="org-right">2.634d0</td>
+<td class="org-right">2.695d0</td>
+<td class="org-right">2.695d0</td>
+<td class="org-right">2.689d0</td>
+<td class="org-right">2.726d0</td>
+<td class="org-right">2.78d0</td>
+<td class="org-right">2.751d0</td>
+<td class="org-right">2.766d0</td>
+<td class="org-right">2.84d0</td>
+<td class="org-right">2.902d0</td>
+<td class="org-right">2.923d0</td>
+<td class="org-right">2.907d0</td>
+<td class="org-right">2.968d0</td>
+<td class="org-right">2.947d0</td>
+<td class="org-right">2.944d0</td>
+<td class="org-right">2.859d0</td>
+<td class="org-right">2.799d0</td>
+<td class="org-right">2.749d0</td>
+<td class="org-right">2.766d0</td>
+<td class="org-right">2.801d0</td>
+<td class="org-right">2.921d0</td>
+<td class="org-right">2.937d0</td>
+<td class="org-right">2.952d0</td>
+<td class="org-right">2.883d0</td>
+<td class="org-right">2.816d0</td>
+<td class="org-right">2.809d0</td>
+<td class="org-right">2.922d0</td>
+<td class="org-right">3.041d0</td>
+<td class="org-right">3.16d0</td>
+<td class="org-right">3.24d0</td>
+<td class="org-right">3.25d0</td>
+<td class="org-right">3.181d0</td>
+<td class="org-right">3.231d0</td>
+<td class="org-right">3.588d0</td>
+<td class="org-right">4.207d0</td>
+<td class="org-right">4.487d0</td>
+<td class="org-right">4.497d0</td>
+<td class="org-right">4.416d0</td>
+<td class="org-right">4.208d0</td>
+<td class="org-right">3.698d0</td>
+<td class="org-right">3.484d0</td>
+<td class="org-right">2.965d0</td>
+<td class="org-right">2.993d0</td>
+<td class="org-right">3.474d0</td>
+<td class="org-right">3.156d0</td>
+<td class="org-right">2.853d0</td>
+<td class="org-right">2.624d0</td>
+<td class="org-right">2.621d0</td>
+<td class="org-right">2.667d0</td>
+<td class="org-right">2.832d0</td>
+<td class="org-right">2.863d0</td>
+<td class="org-right">2.805d0</td>
+<td class="org-right">2.824d0</td>
+<td class="org-right">2.716d0</td>
+<td class="org-right">2.675d0</td>
+<td class="org-right">2.686d0</td>
+<td class="org-right">2.532d0</td>
+<td class="org-right">2.504d0</td>
+<td class="org-right">2.589d0</td>
+<td class="org-right">2.577d0</td>
+<td class="org-right">2.63d0</td>
+<td class="org-right">2.601d0</td>
+<td class="org-right">2.563d0</td>
+<td class="org-right">2.372d0</td>
+<td class="org-right">2.371d0</td>
+<td class="org-right">2.272d0</td>
+<td class="org-right">2.307d0</td>
+<td class="org-right">2.301d0</td>
+<td class="org-right">2.428d0</td>
+<td class="org-right">2.311d0</td>
+<td class="org-right">2.249d0</td>
+<td class="org-right">2.167d0</td>
+<td class="org-right">2.102d0</td>
+<td class="org-right">2.165d0</td>
+<td class="org-right">2.182d0</td>
+<td class="org-right">2.253d0</td>
+<td class="org-right">2.404d0</td>
+<td class="org-right">2.581d0</td>
+<td class="org-right">2.612d0</td>
+<td class="org-right">2.473d0</td>
+<td class="org-right">2.308d0</td>
+<td class="org-right">2.251d0</td>
+<td class="org-right">2.312d0</td>
+<td class="org-right">2.282d0</td>
+<td class="org-right">2.616d0</td>
+<td class="org-right">2.811d0</td>
+<td class="org-right">2.639d0</td>
+<td class="org-right">2.573d0</td>
+<td class="org-right">2.457d0</td>
+<td class="org-right">2.386d0</td>
+<td class="org-right">2.273d0</td>
+<td class="org-right">2.309d0</td>
+<td class="org-right">2.202d0</td>
+<td class="org-right">2.163d0</td>
+<td class="org-right">2.161d0</td>
+<td class="org-right">2.114d0</td>
+<td class="org-right">1.924d0</td>
+<td class="org-right">1.877d0</td>
+<td class="org-right">1.854d0</td>
+<td class="org-right">1.812d0</td>
+<td class="org-right">1.92d0</td>
+<td class="org-right">1.786d0</td>
+<td class="org-right">1.773d0</td>
+<td class="org-right">1.86d0</td>
+<td class="org-right">1.681d0</td>
+<td class="org-right">1.638d0</td>
+<td class="org-right">1.618d0</td>
+<td class="org-right">1.766d0</td>
+<td class="org-right">1.682d0</td>
+<td class="org-right">1.849d0</td>
+<td class="org-right">1.864d0</td>
+<td class="org-right">1.958d0</td>
+<td class="org-right">1.698d0</td>
+<td class="org-right">1.765d0</td>
+<td class="org-right">1.798d0</td>
+<td class="org-right">1.795d0</td>
+<td class="org-right">1.776d0</td>
+<td class="org-right">1.646d0</td>
+<td class="org-right">1.575d0</td>
+<td class="org-right">1.72d0</td>
+<td class="org-right">1.823d0</td>
+<td class="org-right">1.741d0</td>
+<td class="org-right">1.718d0</td>
+<td class="org-right">1.803d0</td>
+<td class="org-right">2.178d0</td>
+<td class="org-right">2.203d0</td>
+<td class="org-right">2.396d0</td>
+<td class="org-right">2.54d0</td>
+<td class="org-right">2.544d0</td>
+<td class="org-right">2.35d0</td>
+<td class="org-right">2.206d0</td>
+<td class="org-right">2.036d0</td>
+<td class="org-right">2.431d0</td>
+<td class="org-right">2.622d0</td>
+<td class="org-right">2.784d0</td>
+<td class="org-right">2.942d0</td>
+<td class="org-right">3.139d0</td>
+<td class="org-right">3.036d0</td>
+<td class="org-right">2.962d0</td>
+<td class="org-right">2.669d0</td>
+<td class="org-right">2.794d0</td>
+<td class="org-right">2.725d0</td>
+<td class="org-right">2.478d0</td>
+<td class="org-right">2.675d0</td>
+<td class="org-right">2.653d0</td>
+<td class="org-right">2.433d0</td>
+<td class="org-right">2.686d0</td>
+<td class="org-right">2.726d0</td>
+<td class="org-right">2.506d0</td>
+<td class="org-right">2.649d0</td>
+<td class="org-right">2.856d0</td>
+<td class="org-right">2.882d0</td>
+<td class="org-right">3.125d0</td>
+<td class="org-right">2.847d0</td>
+<td class="org-right">2.776d0</td>
+<td class="org-right">2.657d0</td>
+<td class="org-right">2.518d0</td>
+<td class="org-right">2.547d0</td>
+<td class="org-right">2.614d0</td>
+<td class="org-right">2.507d0</td>
+<td class="org-right">2.627d0</td>
+<td class="org-right">2.729d0</td>
+<td class="org-right">2.886d0</td>
+<td class="org-right">2.951d0</td>
+<td class="org-right">2.958d0</td>
+<td class="org-right">2.983d0</td>
+<td class="org-right">2.945d0</td>
+<td class="org-right">3.079d0</td>
+<td class="org-right">3.154d0</td>
+<td class="org-right">3.262d0</td>
+<td class="org-right">3.339d0</td>
+<td class="org-right">3.652d0</td>
+<td class="org-right">3.649d0</td>
+<td class="org-right">3.679d0</td>
+<td class="org-right">3.935d0</td>
+<td class="org-right">4.018d0</td>
+<td class="org-right">4.08d0</td>
+<td class="org-right">4</td>
+<td class="org-right">3.863d0</td>
+<td class="org-right">4.058d0</td>
+<td class="org-right">4.53d0</td>
+<td class="org-right">4.863d0</td>
+<td class="org-right">5.278d0</td>
+<td class="org-right">4.942d0</td>
+<td class="org-right">5.702d0</td>
+<td class="org-right">5.799d0</td>
+<td class="org-right">5.548d0</td>
+<td class="org-right">5.128d0</td>
+<td class="org-right">5.838d0</td>
+<td class="org-right">5.526d0</td>
+<td class="org-right">5.045d0</td>
+<td class="org-right">4.995d0</td>
+<td class="org-right">4.941d0</td>
+<td class="org-right">4.373d0</td>
+<td class="org-right">3.784d0</td>
+<td class="org-right">3.76d0</td>
+<td class="org-right">3.853d0</td>
+<td class="org-right">3.886d0</td>
+<td class="org-right">3.828d0</td>
+<td class="org-right">4.343d0</td>
+<td class="org-right">4.029d0</td>
+<td class="org-right">4.652d0</td>
+<td class="org-right">4.917d0</td>
+<td class="org-right">4.078d0</td>
+<td class="org-right">4.427d0</td>
+<td class="org-right">4.54d0</td>
+<td class="org-right">4.695d0</td>
+<td class="org-right">4.648d0</td>
+<td class="org-right">4.765d0</td>
+<td class="org-right">5.258d0</td>
+<td class="org-right">5.562d0</td>
+<td class="org-right">6.082d0</td>
+<td class="org-right">6.905d0</td>
+<td class="org-right">7.085d0</td>
+<td class="org-right">6.984d0</td>
+<td class="org-right">8.134d0</td>
+<td class="org-right">7.491d0</td>
+<td class="org-right">8.204d0</td>
+<td class="org-right">8.829d0</td>
+<td class="org-right">8.462d0</td>
+<td class="org-right">9.025d0</td>
+<td class="org-right">7.525d0</td>
+<td class="org-right">6.531d0</td>
+<td class="org-right">6.141d0</td>
+<td class="org-right">5.841d0</td>
+<td class="org-right">6.579d0</td>
+<td class="org-right">7.796d0</td>
+<td class="org-right">8.554d0</td>
+<td class="org-right">8.088d0</td>
+<td class="org-right">8.253d0</td>
+<td class="org-right">9.165d0</td>
+<td class="org-right">9.375d0</td>
+<td class="org-right">9.114d0</td>
+<td class="org-right">7.975d0</td>
+<td class="org-right">8.347d0</td>
+<td class="org-right">7.433d0</td>
+<td class="org-right">6.812d0</td>
+<td class="org-right">6.791d0</td>
+<td class="org-right">6.532d0</td>
+<td class="org-right">5.505d0</td>
+<td class="org-right">5.458d0</td>
+<td class="org-right">6.142d0</td>
+<td class="org-right">6.213d0</td>
+<td class="org-right">6.168d0</td>
+<td class="org-right">6.972d0</td>
+<td class="org-right">6.779d0</td>
+<td class="org-right">5.795d0</td>
+<td class="org-right">6.704d0</td>
+<td class="org-right">5.317d0</td>
+<td class="org-right">4.756d0</td>
+<td class="org-right">3.898d0</td>
+<td class="org-right">3.667d0</td>
+<td class="org-right">3.337d0</td>
+<td class="org-right">3.165d0</td>
+<td class="org-right">2.539d0</td>
+<td class="org-right">2.476d0</td>
+<td class="org-right">2.421d0</td>
+<td class="org-right">2.253d0</td>
+<td class="org-right">2.813d0</td>
+<td class="org-right">2.557d0</td>
+<td class="org-right">2.494d0</td>
+<td class="org-right">2.222d0</td>
+<td class="org-right">2.086d0</td>
+<td class="org-right">2.092d0</td>
+<td class="org-right">2.114d0</td>
+<td class="org-right">2.269d0</td>
+<td class="org-right">2.292d0</td>
+<td class="org-right">2.188d0</td>
+<td class="org-right">2.23d0</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(mean (column energy_prices 'NG))
+</pre>
+</div>
+
+<pre class="example">
+4\.054103853690407d0
+</pre>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2023-07-14 Fri 15:34</p>
+<p class="date">Created: 2023-07-14 Fri 16:23</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
